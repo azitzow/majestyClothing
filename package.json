@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "firebase": "^9.9.0",
-    "sass": "^1.53.0"
+    "sass": "^1.53.0",
+    "styled-components": "^5.3.5"
   }
 }

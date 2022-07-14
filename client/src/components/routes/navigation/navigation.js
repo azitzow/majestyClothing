@@ -1,24 +1,45 @@
 import { Fragment } from "react";
 import { Outlet, Link } from "react-router-dom";
-
 import { ReactComponent as CrownLogo } from "../../../assets/crown.svg";
 import "./navigation.styles.scss";
 
+import './navigation.styles.scss';
+
 const Navigation = () => {
+  const currentUser = "get current user"
+
+  const signOutUser = () => {
+    return <h1>signed out</h1>
+  }
+
   return (
     <Fragment>
-    <div className="navigation">
-      <Link className="logo-container" to="/" >
-        <CrownLogo className="logo" />
-      </Link>
-      <div className="nav-links-container">
-        <Link className="nav-link" to="/shop"> SHOP </Link>
-        <Link className="nav-link" to="/sign-in"> SIGN IN </Link>
+      <div className='navigation'>
+        <Link className='logo-container' to='/'>
+          <CrownLogo className='logo' />
+        </Link>
+        <div className='nav-links-container'>
+          <Link className='nav-link' to='/shop'>
+            SHOP
+          </Link>
+          <Link className='nav-link' to='/auth'>
+          SIGN IN
+          </Link>
+        </div>
       </div>
-    </div>
       <Outlet />
     </Fragment>
   );
-}
+};
 
 export default Navigation;
+
+// {currentUser ? (
+//   <span className='nav-link' onClick={signOutUser}>
+//     SIGN OUT
+//   </span>
+// ) : (
+//   <Link className='nav-link' to='/auth'>
+//     SIGN IN
+//   </Link>
+// )}
